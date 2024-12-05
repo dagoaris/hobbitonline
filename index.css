@@ -1,0 +1,335 @@
+/* Variables CSS para la paleta de colores */
+:root {
+    --color-primario: #4CAF50;
+    --color-secundario: #2196F3;
+    --color-acento: #FFC107;
+    --color-fondo: #f9f9f9;
+    --color-blanco: #ffffff;
+    --color-negro: #333333;
+    --color-gris-claro: #f2f2f2;
+    --color-gris: #ddd;
+    --color-error: #f44336;
+    --color-ingreso: #4CAF50;
+    --color-gasto: #f44336;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-fondo);
+    color: var(--color-negro);
+}
+
+h1 {
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Estilos del buscador */
+#search-container {
+    margin-bottom: 25px;
+}
+
+#search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    max-width: 90%;
+    border: 1px solid var(--color-gris);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+#search-container input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 5px var(--color-secundario);
+}
+
+/* Estilos del formulario para agregar productos */
+#form-producto {
+    margin-bottom: 30px;
+}
+
+#form-producto input[type="text"],
+#form-producto input[type="number"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid var(--color-gris);
+    border-radius: 20px;
+    width: 200px;
+    max-width: 90%;
+    transition: all 0.3s ease;
+}
+
+#form-producto input[type="text"]:focus,
+#form-producto input[type="number"]:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 5px var(--color-secundario);
+}
+
+#form-producto button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#form-producto button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos de la tabla */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 1000px;
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid var(--color-gris);
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-gris-claro);
+}
+
+/* Estilos de los contenedores */
+.formulario-actualizar, .backup-container, .formulario-financiero {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid var(--color-gris);
+    display: inline-block;
+    border-radius: 15px;
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-actualizar:hover, .backup-container:hover, .formulario-financiero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.formulario-actualizar h3, .backup-container h3, .formulario-financiero h3 {
+    color: var(--color-primario);
+    margin-bottom: 15px;
+}
+
+.formulario-actualizar input[type="text"],
+.formulario-actualizar input[type="number"],
+.formulario-actualizar select,
+.formulario-financiero input[type="text"],
+.formulario-financiero input[type="number"],
+.formulario-financiero select {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid var(--color-gris);
+    border-radius: 20px;
+    width: 220px;
+    max-width: 90%;
+    transition: all 0.3s ease;
+}
+
+.formulario-actualizar input[type="text"]:focus,
+.formulario-actualizar input[type="number"]:focus,
+.formulario-actualizar select:focus,
+.formulario-financiero input[type="text"]:focus,
+.formulario-financiero input[type="number"]:focus,
+.formulario-financiero select:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 5px var(--color-secundario);
+}
+
+.formulario-actualizar button,
+.formulario-financiero button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-actualizar button:hover,
+.formulario-financiero button:hover {
+    background-color: #3e8e41;
+}
+
+.backup-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.backup-container button:hover {
+    background-color: #1a73e8;
+}
+
+.backup-container input[type="file"] {
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-gris-claro);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.backup-container input[type="file"]:hover {
+    background-color: var(--color-gris);
+}
+
+/* Estilos de los botones dentro de la tabla */
+.qr-controls button {
+    margin: 5px 0;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.qr-controls button:hover {
+    background-color: #1a73e8;
+}
+
+.qr-controls button.eliminar {
+    background-color: var(--color-error);
+}
+
+.qr-controls button.eliminar:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilos de las imágenes QR */
+.qr img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Estilos del módulo financiero */
+.formulario-financiero select {
+    background-color: var(--color-blanco);
+}
+
+.transacciones-financiero {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.transacciones-financiero th, .transacciones-financiero td {
+    border: 1px solid var(--color-gris);
+    padding: 10px;
+    text-align: center;
+}
+
+.transacciones-financiero th {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.transacciones-financiero tr:nth-child(even) {
+    background-color: var(--color-gris-claro);
+}
+
+.resumen-financiero {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--color-blanco);
+    padding: 15px;
+    border: 1px solid var(--color-gris);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.resumen-financiero h3 {
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+}
+
+.resumen-financiero p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.resumen-financiero .ingresos {
+    color: var(--color-ingreso);
+}
+
+.resumen-financiero .gastos {
+    color: var(--color-gasto);
+}
+
+.resumen-financiero .balance {
+    font-weight: bold;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    table, .formulario-actualizar, .backup-container, .formulario-financiero, .transacciones-financiero, .resumen-financiero {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #search-container input[type="text"],
+    #form-producto input[type="text"],
+    #form-producto input[type="number"],
+    .formulario-actualizar input[type="text"],
+    .formulario-actualizar input[type="number"],
+    .formulario-actualizar select,
+    .formulario-financiero input[type="text"],
+    .formulario-financiero input[type="number"],
+    .formulario-financiero select {
+        width: 90%;
+    }
+
+    .qr img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .resumen-financiero p {
+        font-size: 14px;
+    }
+}

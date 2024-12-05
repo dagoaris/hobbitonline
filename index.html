@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Inventario Hobbit</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Librería para escanear QR Codes -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <!-- Enlace a tu hoja de estilos -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Gestión Inventario Hobbit</h1>
+
+    <!-- Buscador de productos -->
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Buscar Producto por Nombre o ID..." onkeyup="buscarProducto()">
+    </div>
+
+    <!-- Formulario para agregar productos -->
+    <form id="form-producto">
+        <input type="text" id="nombre" placeholder="Nombre del Producto" required>
+        <input type="number" id="cantidad" placeholder="Cantidad Inicial" required min="0">
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <!-- Tabla de inventario -->
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Código QR</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-inventario"></tbody>
+    </table>
+
+    <!-- Formulario para actualizar inventario -->
+    <div class="formulario-actualizar">
+        <h3>Actualizar Inventario</h3>
+        <input type="text" id="qr-input" placeholder="Escanea o ingresa el código QR">
+        <button type="button" onclick="iniciarEscaneo()">Escanear QR</button>
+        <div id="qr-reader"></div>
+        <select id="tipo-movimiento">
+            <option value="" disabled selected>Selecciona Tipo</option>
+            <option value="entrada">Entrada</option>
+            <option value="salida">Salida</option>
+        </select>
+        <input type="number" id="mov-cantidad" placeholder="Cantidad" required min="1">
+        <button type="button" onclick="actualizarInventario()">Actualizar</button>
+    </div>
+
+    <!-- Opciones de Backup -->
+    <div class="backup-container">
+        <h3>Opciones de Backup</h3>
+        <button type="button" onclick="descargarBackup()">Descargar Backup (JSON)</button>
+        <button type="button" onclick="descargarExcel()">Descargar Inventario y Financiero (Excel)</button>
+        <input type="file" id="backup-file" accept=".json" onchange="restaurarBackup(event)">
+    </div>
+
+    <!-- Formulario para Gestión Financiera -->
+    <div class="formulario-financiero">
+        <h3>Gestión Financiera</h3>
+        <select id="tipo-transaccion">
+            <option value="" disabled selected>Selecciona Tipo</option>
+            <option value="ingreso">Ingreso</option>
+            <option value="gasto">Gasto</option>
+        </select>
+        <input type="text" id="descripcion" placeholder="Descripción" required>
+        <input type="number" id="cantidad-financiera" placeholder="Cantidad" required min="0.01" step="0.01">
+        <button type="button" onclick="agregarTransaccion()">Agregar Transacción</button>
+    </div>
+
+    <!-- Tabla de Transacciones Financieras -->
+    <table class="transacciones-financiero">
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-financiera"></tbody>
+    </table>
+
+    <!-- Resumen Financiero -->
+    <div class="resumen-financiero">
+        <h3>Resumen Financiero</h3>
+        <p class="ingresos">Total Ingresos: $<span id="total-ingresos">0.00</span></p>
+        <p class="gastos">Total Gastos: $<span id="total-gastos">0.00</span></p>
+        <p class="balance">Balance Neto: $<span id="balance-neto">0.00</span></p>
+    </div>
+
+    <!-- Librerías externas -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+    <!-- Tu archivo JavaScript principal -->
+    <script src="index.js"></script>
+</body>
+</html>
